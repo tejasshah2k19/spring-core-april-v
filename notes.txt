@@ -1,0 +1,49 @@
+class User{
+	Address address; 
+
+	User(Address address){
+		this.address = address; 
+	}
+}
+
+class Address{
+
+	String city; 
+}
+
+
+
+Address address = new Address(); 
+User user = new User(address);
+
+
+1)construcotr injection [ c ]  
+2)setter injection  	[ o ]
+
+class User{
+	Address address; 
+	public void setAddress(Address address){
+		this.address = address; 
+	}
+}
+
+class Address{
+
+	String city; 
+}
+
+
+Address address = new Address(); 
+User user = new User();
+user.setAddress(address);
+
+
+
+
+
+requestScope
+singleton
+prototype
+sessionScope
+globalSession 
+

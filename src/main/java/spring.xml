@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.bean.UserBean" id="user" init-method="init"
+		destroy-method="destroy" scope="prototype">
+		<property name="firstName" value="admin"></property>
+		<property name="email" value="admin@gmail.com"></property>
+		<constructor-arg ref="address"></constructor-arg>
+		<property name="payment" ref="pay"></property>
+	</bean>
+
+	<bean class="com.bean.AddressBean" id="address">
+		<property name="city" value="ahmedabad"></property>
+	</bean>
+
+	<bean class="com.bean.PaymentBean" id="pay">
+		<property name="amount" value="100"></property>
+	</bean>
+</beans> 
